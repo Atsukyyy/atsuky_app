@@ -1,0 +1,11 @@
+<% provide(:title, '全ての投稿') %>
+<h1>全ての投稿</h1>
+
+<ul class="posts">
+  <% @post.each do |p| %>
+    <li><%= link_to p.content, p %></li>
+  <% end %>
+</ul>
+<div class="link_to_new">
+  <%= link_to "投稿画面に戻る", new_post_path %>
+</div>

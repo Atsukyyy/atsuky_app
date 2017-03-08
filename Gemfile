@@ -19,8 +19,22 @@ gem 'bootstrap-will_paginate', '0.0.9'
 
 group :development, :test do
   gem 'sqlite3','1.3.8'
-#1.3.11
+  #1.3.11
   gem 'rspec-rails', '2.13.1'
+  gem 'pry-rails'
+
+  # デバッガー
+  gem 'pry-byebug'
+  gem 'pry-stack_explorer'
+
+  # pryの入出力に色付け
+  gem 'pry-coolline'
+  gem 'awesome_print'
+
+  # PryでのSQLの結果を綺麗に表示
+  gem 'hirb'
+  gem 'hirb-unicode'
+
 end
 
 group :test do
