@@ -1,0 +1,19 @@
+<% provide(:title, '') %>
+<h1>全ての投稿</h1>
+
+<% if false %><%= paginate @posts %> <% end %>
+
+<ul class="posts">
+  <p>Name:</p>
+  <p><%= @post.name %></p>
+  <p>Content:</p>
+  <p><%= @post.content %></p>
+</ul>
+
+  <div class="link_to_new">
+    <%= link_to "投稿画面に戻る", new_post_path %>
+  </div>
+  <div class="link_to_index">
+    <%= link_to "みんなの投稿に戻る", posts_path %>
+  </div>
+<% if false %><%= will_paginate @posts %><% end %>

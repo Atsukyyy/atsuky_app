@@ -10,6 +10,48 @@ $grayMediumLight: #eaeaea;
 }
 
 
+.posts {
+  font-size: 20px;
+  list-style-type: circle;
+  li {
+    padding-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 15px;
+  }
+}
+
+.showlink {
+  margin-top: 100px;
+}
+
+.nav {
+  li {
+    font-size: 18px;
+  }
+}
+
+.link_to_index {
+  text-align: right;
+  font-size: 16px;
+}
+
+.link_to_new {
+  text-align: right;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
 /* universal */
 
 html {
