@@ -1,0 +1,17 @@
+<% provide(:title, '全ての投稿') %>
+<h1>全ての投稿</h1>
+
+<%= will_paginate @posts %>
+
+<ul class="posts">
+<table>
+  <% @posts.each do |p| %>
+<tr>
+  <td><%= link_to p.content, post_path(@post) %></td>
+</tr>
+  <% end %>
+  <%= binding.pry %>
+</table>
+</ul>
+
+<%= will_paginate @posts %>

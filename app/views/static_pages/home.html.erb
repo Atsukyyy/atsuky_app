@@ -22,8 +22,12 @@
 
     <h2>日常生活で不便な場所、物、事を投稿してください！</h2>
 
-    <%= link_to "早速投稿する！", signup_path,
+    <%= link_to "早速投稿する！", new_post_path,
                                 class: "btn btn-large btn-primary" %>
+  </div>
+  <div>
+    <h1>みんなの投稿を見る</h1>
+    <%= link_to "みんなの投稿を見る", posts_path %>
   </div>
 
   <!--<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>-->

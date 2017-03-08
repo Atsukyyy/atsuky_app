@@ -1,0 +1,10 @@
+<% provide(:title, '') %>
+<h1>全ての投稿</h1>
+
+<%= will_paginate @post %>
+
+<ul class="posts">
+  <%= @post %>
+</ul>
+
+<%= will_paginate @post %>
