@@ -1,10 +1,11 @@
 class PostsController < ApplicationController
   def index
-    #@posts = Post.all
-    @posts = Post.all.paginate(page: params[:post])
+    @post = Post.all
+    @posts = Post.page params[:page]
   end
   def show
     @post = Post.find(params[:id])
+    @posts = Post.page params[:page]
   end
   def new
     @post = Post.new
@@ -16,7 +17,7 @@ class PostsController < ApplicationController
     	flash[:success] = "ありがとうございます！"
     	redirect_to '/'
 		else
-			render 'new_post_path'
+			render 'new'
     end
   end
 

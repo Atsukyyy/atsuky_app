@@ -24,10 +24,10 @@
 
     <%= link_to "早速投稿する！", new_post_path,
                                 class: "btn btn-large btn-primary" %>
-  </div>
-  <div>
-    <h1>みんなの投稿を見る</h1>
-    <%= link_to "みんなの投稿を見る", posts_path %>
+    <strong><=></strong>
+
+    <%= link_to "みんなの投稿を見る", posts_path,
+                                class: "btn btn-large btn-primary"  %>
   </div>
 
   <!--<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>-->

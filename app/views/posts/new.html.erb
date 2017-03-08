@@ -1,16 +1,24 @@
+<%= javascript_include_tag 'new_text' %>
+
 <h1>投稿</h1>
 
 <div class="row">
 	<div class="span6 offset3">
-		<%= form_for(:post, url: posts_path) do |f| %>
+		<%= form_for(@post) do |f| %>
+			<%= render 'shared/error_messages' %>
 
 			<%= f.label :name %>
-			<%= f.text_field :name %>
+			<%= f.text_field :name, class: 'form_control' %>
 
 			<%= f.label :content %>
-			<%= f.text_field :content %>
+			<div id="newcontent">
+				<%= f.text_field :content, class: 'form_control' %>
+			</div>
 
 			<%= f.submit "投稿！", class: "btn btn-large btn-primary" %>
+			<div class="link_to_index">
+				<%= link_to "みんなの投稿を見る", posts_path %>
+			</div>
 		<% end %>
   </div>
 </div>
