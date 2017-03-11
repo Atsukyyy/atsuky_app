@@ -10,6 +10,14 @@
   <p><%= @post.content %></p>
 </ul>
 
+  <div class="comments">
+    <%= link_to "コメントを残す", new_post_comment_path(@post) %>
+  </div>
+
+  <div class="comments">
+    <%= link_to "コメント一覧", "#" %>
+  </div>
+
   <div class="link_to_new">
     <%= link_to "投稿画面に戻る", new_post_path %>
   </div>
@@ -17,3 +25,16 @@
     <%= link_to "みんなの投稿に戻る", posts_path %>
   </div>
 <% if false %><%= will_paginate @posts %><% end %>
+
+<div class="row">
+	<div class="span6 offset3">
+    <%= form_for [@post, @comments] do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form_control' %>
+      <%= f.label :content %>
+      <%= f.text_field :content, class: 'form_control' %>
+
+    <%= f.submit "投稿！", class: "btn btn-large btn-primary" %>
+  <% end %>
+  </div>
+</div>
