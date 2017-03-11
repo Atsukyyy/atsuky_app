@@ -1,0 +1,11 @@
+<% provide(:title, 'コメント一覧') %>
+<h1>コメント一覧</h1>
+
+<ul class="comments">
+  <% @comment.each do |c| %>
+    <li><%= c %></li>
+  <% end %>
+</ul>
+<div class="link_to_new">
+  <%= link_to "投稿画面に戻る", new_post_path %>
+</div>

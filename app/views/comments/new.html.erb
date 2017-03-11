@@ -1,0 +1,18 @@
+<h1>コメント投稿</h1>
+
+<div class="row">
+	<div class="span6 offset3">
+    <%= form_for(@post) do |f| %>
+      <%= f.fields_for(@comment) do |cf| %>
+        <%= cf.label :name %>
+        <%= cf.text_field :name, class: 'form_control' %>
+        <%= cf.label :content %>
+        <%= cf.text_field :content, class: 'form_control' %>
+      <% end %>
+      <%= f.submit "投稿！", class: "btn btn-large btn-primary" %>
+      <% end %>
+    <div class="link_to_index">
+				<%= link_to "みんなの投稿を見る", posts_path %>
+		</div>
+  </div>
+</div>
