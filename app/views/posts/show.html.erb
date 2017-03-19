@@ -1,22 +1,14 @@
 <% provide(:title, '') %>
-<h1>全ての投稿</h1>
+<h1><%= @post.name %>さんの投稿</h1>
 
 <% if false %><%= paginate @posts %> <% end %>
 
 <ul class="posts">
-  <p>Name:</p>
-  <p><%= @post.name %></p>
-  <p>Content:</p>
-  <p><%= @post.content %></p>
+  <div class="post_name"><p>Name:</p></div>
+  <div class="own_name"><p><%= @post.name %></p></div>
+  <div class="post_content"><p>Content:</p></div>
+  <div class="own_content"><p><%= @post.content %></p></div>
 </ul>
-
-  <div class="comments">
-    <%= link_to "コメントを残す", new_post_comment_path(@post) %>
-  </div>
-
-  <div class="comments">
-    <%= link_to "コメント一覧", "#" %>
-  </div>
 
   <div class="link_to_new">
     <%= link_to "投稿画面に戻る", new_post_path %>
@@ -26,15 +18,28 @@
   </div>
 <% if false %><%= will_paginate @posts %><% end %>
 
-<div class="row">
+<div class="row comments_form">
 	<div class="span6 offset3">
     <%= form_for [@post, @comments] do |f| %>
+
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form_control' %>
       <%= f.label :content %>
       <%= f.text_field :content, class: 'form_control' %>
+      <%= f.hidden_field :post_id, :value => @post.id %>
 
-    <%= f.submit "投稿！", class: "btn btn-large btn-primary" %>
+    <%= f.submit "コメントする", class: "btn btn-large btn-primary" %>
   <% end %>
   </div>
 </div>
+
+
+<% @post.comments.each do |c| %>
+  <div class="comments_name">
+    <%= c.name %>
+  </div>
+  <div class="comments_content">
+    <%= c.content %>
+  </div>
+</br>
+<% end %>

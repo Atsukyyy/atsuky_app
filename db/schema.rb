@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20170309092821) do
   end
 
   add_index "comments", ["post_id", "created_at"], name: "index_comments_on_post_id_and_created_at"
-  add_index "comments", ["post_id"], name: "index_comments_on_post_id"
 
   create_table "microposts", force: true do |t|
     t.string   "content"

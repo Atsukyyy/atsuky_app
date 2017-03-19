@@ -7,13 +7,13 @@ class CommentsController < ApplicationController
     #@comment = @post.comments.build
   end
   def create
-    @post = Post.find_by(params[:id])
+    @post = Post.find_by (params[:id])
     @comments = @post.comments.build(comment_params)
     if @comments.save
     	flash[:success] = "コメントを残しました！"
-      redirect_to '/'
+      redirect_to @post
   	else
-  		render 'new'
+  		redirect_to @post
     end
   end
 

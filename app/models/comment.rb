@@ -1,5 +1,6 @@
 class Comment < ActiveRecord::Base
   belongs_to :post
-  #validates :post_id
+  validates :name, presence: true
+  validates :content, presence: true
   accepts_nested_attributes_for :post, allow_destroy: true
 end

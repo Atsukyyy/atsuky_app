@@ -4,8 +4,9 @@ class PostsController < ApplicationController
     #@posts = Post.page params[:page]
   end
   def show
-    @post = Post.find(params[:id])
+    @post = Post.find_by(params[:id])
     @comments = @post.comments.build
+    #@comment = @post.comments
     #@posts = Post.page params[:page]
   end
   def new
@@ -24,7 +25,7 @@ class PostsController < ApplicationController
     end
   end
   def update
-    @post = Post.find(params[:id])
+    @post = Post.find_by(params[:id])
     @comment = @post.comments.build(post_params)
     if @post.update_attributes(post_params)
       flash[:success] = "updated"
